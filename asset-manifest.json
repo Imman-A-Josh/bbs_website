@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/bbs_website/static/css/main.4de95291.css",
+    "main.js": "/bbs_website/static/js/main.ec6b37c7.js",
+    "static/js/453.099127a5.chunk.js": "/bbs_website/static/js/453.099127a5.chunk.js",
+    "static/media/maize.avif": "/bbs_website/static/media/maize.4380f3fb361ae07967ef.avif",
+    "static/media/p1.avif": "/bbs_website/static/media/p1.ec60c60d0ff2bf79976b.avif",
+    "static/media/metal1.avif": "/bbs_website/static/media/metal1.0a8d751f63566b86fa51.avif",
+    "static/media/meeting.jpg": "/bbs_website/static/media/meeting.ce5ccd9f36ae18c2efa4.jpg",
+    "static/media/rice.avif": "/bbs_website/static/media/rice.dc12e3f5aff3e08a820e.avif",
+    "static/media/wheat.avif": "/bbs_website/static/media/wheat.d31c7475c5187cb341a4.avif",
+    "static/media/p2.avif": "/bbs_website/static/media/p2.03523d4c97874b0c5d06.avif",
+    "static/media/blog3.jpg": "/bbs_website/static/media/blog3.f2922259b0d29379a7d0.jpg",
+    "static/media/agroMain.avif": "/bbs_website/static/media/agroMain.2ec07e374020026f3639.avif",
+    "static/media/metal6.avif": "/bbs_website/static/media/metal6.43fde231606825a6471e.avif",
+    "static/media/metal7.jpg": "/bbs_website/static/media/metal7.ba53a751934ac09764b4.jpg",
+    "static/media/back2.jpg": "/bbs_website/static/media/back2.31af85d90407d3291a96.jpg",
+    "static/media/blog2.jpg": "/bbs_website/static/media/blog2.21ee045b123a08bfb572.jpg",
+    "static/media/p4.jpg": "/bbs_website/static/media/p4.c3c92d6210b551b919c6.jpg",
+    "static/media/logo.avif": "/bbs_website/static/media/logo.abb499212d77d013bf3e.avif",
+    "static/media/metal5.avif": "/bbs_website/static/media/metal5.ef4585685c25fdc6ca45.avif",
+    "static/media/metal2.avif": "/bbs_website/static/media/metal2.24d8178ab1d3c40f7743.avif",
+    "index.html": "/bbs_website/index.html",
+    "main.4de95291.css.map": "/bbs_website/static/css/main.4de95291.css.map",
+    "main.ec6b37c7.js.map": "/bbs_website/static/js/main.ec6b37c7.js.map",
+    "453.099127a5.chunk.js.map": "/bbs_website/static/js/453.099127a5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4de95291.css",
+    "static/js/main.ec6b37c7.js"
+  ]
+}
