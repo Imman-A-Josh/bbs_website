@@ -1,15 +1,32 @@
-import { Container, Button, Row, Col, Card, Badge, Carousel } from "react-bootstrap";
-import { useRef, useEffect, useState } from "react";
+import { Container, Button, Row, Col, Card, Carousel, Badge } from "react-bootstrap";
 import "./HomeFull.css";
 import CountUp from 'react-countup';
 import Blog1 from '../Assets/blog1.jpg';
 import Blog2 from '../Assets/blog2.jpg';
 import Blog3 from '../Assets/blog3.jpg';
+import "../styles/CategoryCarosuel.css";
 
-import Back2 from '../Assets/back2.jpg';
-import Back3 from '../Assets/back3.jpg';
+import pet1 from '../Assets/p1.avif';
+import pet2 from '../Assets/p2.avif';
+import pet3 from '../Assets/p3.jpg';
+import pet4 from '../Assets/p4.jpg';
+import petrolium from '../Assets/petrolium.jpg';
 
-import aboutImage from '../Assets/about.png'
+import agroImage1 from '../Assets/agroMain.avif';
+import sugarImage from '../Assets/sugar.jpg';
+import riceImage from '../Assets/rice.avif';
+import wheatImage from '../Assets/wheat.avif';
+import maizeImage from '../Assets/maize.avif';
+import soyaImage from '../Assets/soya.jpg';
+
+import metalImage1 from '../Assets/metal1.avif';
+import metalImage2 from '../Assets/metal2.avif';
+import metalImage3 from '../Assets/metal3.jpg';
+import metalImage4 from '../Assets/metal4.jpg';
+import metalImage5 from '../Assets/metal5.avif';
+import metalImage6 from '../Assets/metal6.avif';
+import metalImage7 from '../Assets/metal7.jpg';
+
 
 import { FaSmile, FaStar, FaGlobe, FaBolt } from "react-icons/fa";
 
@@ -20,16 +37,43 @@ const features = [
     { icon: <FaBolt />, title: "Advanced Tech" },
 ];
 
-const HeroSection = () => {
+const categories = [
+    {
+        title: "Petroleum",
+        image: petrolium,
+        products: [
+            { name: "BLCO", image: pet1 },
+            { name: "Diesel", image: pet2 },
+            { name: "Jet Fuel", image: pet3 },
+            { name: "Bitumen", image: pet4 },
+        ],
+    },
+    {
+        title: "Agriculture",
+        image: agroImage1,
+        products: [
+            { name: "Wheat", image: wheatImage },
+            { name: "Rice", image: riceImage },
+            { name: "Sugar", image: sugarImage },
+            { name: "Maize", image: maizeImage },
+            { name: "Soya Bean", image: soyaImage },
+        ],
+    },
+    {
+        title: "Metals",
+        image: metalImage1,
+        products: [
+            { name: "IRON ORE", image: metalImage2 },
+            { name: "Nickel Ore", image: metalImage3 },
+            { name: "Bauxite", image: metalImage4 },
+            { name: "QUARTZ", image: metalImage5 },
+            { name: "Aluminum", image: metalImage6 },
+            // { name: "Copper", image: metalImage7 },
+        ],
+    },
+]
 
-    const services = [
-        { icon: "⚙️", title: "Petroleum", text: "High-grade petroleum products sourced responsibly." },
-        { icon: "⛏️", title: "Minerals & Ores", text: "Reliable supply of metals, ores and mining outputs." },
-        { icon: "🌾", title: "Agro Products", text: "Fresh, processed and bulk agricultural commodities." },
-        { icon: "📦", title: "Logistics", text: "End-to-end shipping and supply chain management." },
-        { icon: "✅", title: "Quality Control", text: "Strict QC & compliance for each shipment." },
-        { icon: "🤝", title: "Trade Finance", text: "Flexible payment & trade financing solutions." },
-    ];
+const HeroSection = () => {
 
     const cardData = [
         {
@@ -49,230 +93,93 @@ const HeroSection = () => {
         }
     ];
 
-    const refs = useRef([]);
-    const [visible, setVisible] = useState([]);
-
-    useEffect(() => {
-        const obs = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setVisible((v) => Array.from(new Set([...v, entry.target.dataset.idx])));
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
-
-        refs.current.forEach((el) => el && obs.observe(el));
-        return () => obs.disconnect();
-    }, []);
-
-
     return (
 
         <>
+            <section
+                id="home"
+                className="d-flex align-items-center mt-4 "
+                style={{
+                    minHeight: "100vh",
+                    backgroundColor: "#fff",
+                    overflow: "hidden",
+                }}
+            >
+                <Container>
+                    <Row className="align-items-center">
+                        {/* Left Content */}
+                        <Col md={6} className="text-start p-3">
+                            <h1 className="fw-bold display-5 mb-3">
+                                International Trade{" "}
+                                <span style={{ color: "#3A2E5F" }}>Reality</span>
+                            </h1>
 
-            {/* <section id="home">
+                            <p className="lead mb-4 mt-4" style={{ color: "#555" }}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rem repellendus quasi fuga nesciunt
+                                dolorum nulla magnam veniam sapiente, fugiat! Lorem ipsum dolor sit amet.
+                            </p>
 
-                <div
-                    className="hero-section d-flex align-items-center text-center text-white"
-                >
-                    <Container>
-                        <h1 className="fw-bold display-5 mb-4 animate-fade-in">
-                            App, Business & SaaS <br /> Landing Page Template
-                        </h1>
-                        <p className="lead mx-auto mb-5" style={{ maxWidth: "800px" }}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rem repellendus quasi fuga nesciunt
-                            dolorum nulla magnam veniam sapiente, fugiat! Lorem ipsum dolor sit amet.
-                        </p>
-                        <div className="d-flex justify-content-center gap-3">
-                            <Button
-                                variant="outline-light"
-                                className="px-4 py-2 fw-semibold shadow-sm"
-                                style={{ borderRadius: "30px", transition: "all 0.3s ease", }}
-                            >
-                                DOWNLOAD NOW
-                            </Button>
-                            <Button
-                                variant="outline-light"
-                                className="px-4 py-2 fw-semibold"
-                                style={{
-                                    borderRadius: "30px",
-                                    transition: "all 0.3s ease",
-                                }}
-                                onMouseEnter={(e) => (e.target.style.backgroundColor = "white", e.target.style.color = "#4b0082")}
-                                onMouseLeave={(e) => (e.target.style.backgroundColor = "transparent", e.target.style.color = "white")}
-                            >
-                                LEARN MORE
-                            </Button>
-                        </div>
-                    </Container>
-                </div>
-            </section> */}
 
-            <section id="home">
-                <Carousel fade controls={true} indicators={true} interval={1000}>
+                            <div className="d-flex gap-3 mt-5">
+                                <Button
+                                    variant="primary"
+                                    className="px-4 py-2 fw-semibold shadow-sm"
+                                    style={{
+                                        borderRadius: "8px",
+                                        backgroundColor: "#3A2E5F",
+                                        border: "none",
+                                    }}
+                                >
+                                    Explore Products →
+                                </Button>
 
-                    {/* Slide 1 */}
-                    <Carousel.Item>
-                        <div
-                            className="hero-slide d-flex align-items-center text-center text-white"
-                            style={{
-                                minHeight: "100vh",
-                                background: `linear-gradient(135deg, rgba(58,46,95,0.7), rgba(0,128,0,0.5)), url(https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=1600&q=60) no-repeat center center/cover`,
-                                backgroundSize: "cover",
-                                backgroundPosition: "center",
-                            }}
-                        >
-                            <Container>
-                                <h1 className="fw-bold display-5 mb-4">
-                                    App, Business & SaaS <br /> Landing Page Template
-                                </h1>
-                                <p className="lead mx-auto mb-5" style={{ maxWidth: "800px" }}>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                </p>
-                                <div className="d-flex justify-content-center gap-3">
-                                    <Button
-                                        variant="outline-light"
-                                        className="px-4 py-2 fw-semibold shadow-sm"
-                                        style={{ borderRadius: "30px" }}
-                                    >
-                                        DOWNLOAD NOW
-                                    </Button>
-                                    <Button
-                                        variant="outline-light"
-                                        className="px-4 py-2 fw-semibold"
-                                        style={{ borderRadius: "30px" }}
-                                        onMouseEnter={(e) => {
-                                            e.target.style.backgroundColor = "white";
-                                            e.target.style.color = "#4b0082";
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.target.style.backgroundColor = "transparent";
-                                            e.target.style.color = "white";
-                                        }}
-                                    >
-                                        LEARN MORE
-                                    </Button>
-                                </div>
-                            </Container>
-                        </div>
-                    </Carousel.Item>
+                                <Button
+                                    variant="outline-secondary"
+                                    className="px-4 py-2 fw-semibold"
+                                    style={{ borderRadius: "8px" }}
+                                >
+                                    Contact Us →
+                                </Button>
+                            </div>
+                        </Col>
 
-                    {/* Slide 2 */}
-                    <Carousel.Item>
-                        <div
-                            className="hero-slide d-flex align-items-center text-center text-white"
-                            style={{
-                                minHeight: "100vh",
-                                background: `linear-gradient(135deg, rgba(75,0,130,0.7), rgba(0,128,128,0.5)), url(${Back2}) no-repeat center center/cover`,
-                                backgroundSize: "cover",
-                                backgroundPosition: "center",
-                            }}
-                        >
-                            <Container>
-                                <h1 className="fw-bold display-5 mb-4">
-                                    Grow Your Business Globally
-                                </h1>
-                                <p className="lead mx-auto mb-5" style={{ maxWidth: "800px" }}>
-                                    Connect with clients worldwide and expand your market reach.
-                                </p>
-                                <div className="d-flex justify-content-center gap-3">
-                                    <Button
-                                        variant="outline-light"
-                                        className="px-4 py-2 fw-semibold shadow-sm"
-                                        style={{ borderRadius: "30px" }}
-                                    >
-                                        GET STARTED
-                                    </Button>
-                                    <Button
-                                        variant="outline-light"
-                                        className="px-4 py-2 fw-semibold"
-                                        style={{ borderRadius: "30px" }}
-                                        onMouseEnter={(e) => {
-                                            e.target.style.backgroundColor = "white";
-                                            e.target.style.color = "#4b0082";
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.target.style.backgroundColor = "transparent";
-                                            e.target.style.color = "white";
-                                        }}
-                                    >
-                                        LEARN MORE
-                                    </Button>
-                                </div>
-                            </Container>
-                        </div>
-                    </Carousel.Item>
-
-                    {/* Slide 3 */}
-                    <Carousel.Item>
-                        <div
-                            className="hero-slide d-flex align-items-center text-center text-white"
-                            style={{
-                                minHeight: "100vh",
-                                background: `linear-gradient(135deg, rgba(0,0,128,0.7), rgba(128,0,128,0.5)), url(${Back3}) no-repeat center center/cover`,
-                                backgroundSize: "cover",
-                                backgroundPosition: "center",
-                            }}
-                        >
-                            <Container>
-                                <h1 className="fw-bold display-5 mb-4">
-                                    Innovative Solutions for Your Startup
-                                </h1>
-                                <p className="lead mx-auto mb-5" style={{ maxWidth: "800px" }}>
-                                    Build, scale, and succeed with cutting-edge solutions.
-                                </p>
-                                <div className="d-flex justify-content-center gap-3">
-                                    <Button
-                                        variant="outline-light"
-                                        className="px-4 py-2 fw-semibold shadow-sm"
-                                        style={{ borderRadius: "30px" }}
-                                    >
-                                        CONTACT US
-                                    </Button>
-                                    <Button
-                                        variant="outline-light"
-                                        className="px-4 py-2 fw-semibold"
-                                        style={{ borderRadius: "30px" }}
-                                        onMouseEnter={(e) => {
-                                            e.target.style.backgroundColor = "white";
-                                            e.target.style.color = "#4b0082";
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.target.style.backgroundColor = "transparent";
-                                            e.target.style.color = "white";
-                                        }}
-                                    >
-                                        LEARN MORE
-                                    </Button>
-                                </div>
-                            </Container>
-                        </div>
-                    </Carousel.Item>
-
-                </Carousel>
+                        <Col md={6} className="text-center mt-5 mt-md-0">
+                            <img
+                                src="https://img.freepik.com/premium-photo/people-suits-are-working-business-meeting-isolated-white-background-simple-style_660230-8713.jpg?w=360"
+                                alt="developer"
+                                className="img-fluid"
+                                style={{ maxHeight: "500px", width: "100%", objectFit: "contain" }}
+                            />
+                        </Col>
+                    </Row>
+                </Container>
             </section>
 
-            <section className="stats-section text-center py-5">
+
+            <section className="stats-section text-center pb-3">
                 <Container>
-                    <Row>
-                        <Col md={4}>
-                            <h1 className="stat-number">
+                    <Row className="border text-light p-3 rounded-5" style={{ background: "#3A2E5F" }}>
+                        <Col md={3}>
+                            <h1 className="stat-number text-light">
                                 <CountUp end={100} duration={5} />+
                             </h1>
-                            <p className="stat-label">Our Products</p>
+                            <p className="stat-label text-light">Our Products</p>
                         </Col>
-                        <Col md={4}>
-                            <h1 className="stat-number">
+                        <Col md={3}>
+                            <h1 className="stat-number text-light">
                                 <CountUp end={500} duration={5} />+
                             </h1>
-                            <p className="stat-label">Worldwide Sourcing</p>
+                            <p className="stat-label text-light">Worldwide Sourcing</p>
                         </Col>
-                        <Col md={4}>
-                            <h1 className="stat-number">24/7</h1>
-                            <p className="stat-label">Availability</p>
+                        <Col md={3}>
+                            <h1 className="stat-number text-light">
+                                <CountUp end={50} duration={5} />+
+                            </h1>
+                            <p className="stat-label text-light">Branches</p>
+                        </Col>
+                        <Col md={3}>
+                            <h1 className="stat-number text-light">24/7</h1>
+                            <p className="stat-label text-light">Availability</p>
                         </Col>
                     </Row>
                 </Container>
@@ -280,14 +187,15 @@ const HeroSection = () => {
 
             {/* About Section */}
 
-            <section className="about-section py-5">
+            <section className="about-section py-5" style={{ background: "#fff" }}>
                 <Container>
                     <Row className="align-items-center g-4">
                         <Col md={6}>
                             <img
-                                src={aboutImage} width={800}
+                                src="https://img.freepik.com/premium-photo/png-businesspeople-discussing-table-transparent-background_53876-941255.jpg?semt=ais_hybrid&w=740&q=80"
+                                width={800}
                                 alt="about"
-                                className="img-fluid rounded-4 shadow"
+                                className="img-fluid"
                             />
                         </Col>
                         <Col md={6} className="text-center">
@@ -297,63 +205,68 @@ const HeroSection = () => {
                                 style={{ width: "60px", height: "3px", background: "#3A2E5F" }}
                             ></div>
                             <p className="text-muted">
-                                We are committed to facilitating seamless international trade operations and building lasting business relationships.
-                                Our experienced team offers end-to-end commodity sourcing, logistics & compliance.
+                                <b>BIBLIA BUSINESS SOLUTIONS (INDIA) PRIVATE LIMITED <br />(BBS INDIA PVT LTD)</b> is a renowned company specializing in international trade and export expertise. Our core business areas include <b> petroleum, minerals, food products (such as rice, maize, sugar, wheat, and soybean), apparel, and coal </b>.
                             </p>
-
-                            <Row className="mt-4">
-                                <Col xs={4} className="text-center">
-                                    <div className="about-highlight">
-                                        <div className="h-icon">🤝</div>
-                                        <div className="h-title">Trusted Partners</div>
-                                        <div className="h-sub">Global network</div>
-                                    </div>
-                                </Col>
-                                <Col xs={4} className="text-center">
-                                    <div className="about-highlight">
-                                        <div className="h-icon">🌍</div>
-                                        <div className="h-title">Global Reach</div>
-                                        <div className="h-sub">Worldwide sourcing</div>
-                                    </div>
-                                </Col>
-                                <Col xs={4} className="text-center">
-                                    <div className="about-highlight">
-                                        <div className="h-icon">📈</div>
-                                        <div className="h-title">Proven Track</div>
-                                        <div className="h-sub">Years of excellence</div>
-                                    </div>
-                                </Col>
-                            </Row>
+                            <Button
+                                variant="primary"
+                                className="fw-semibold px-4 py-2"
+                                style={{ backgroundColor: "#3A2E5F", border: "none", borderRadius: "6px", }}
+                            >
+                                Discover More
+                            </Button>
                         </Col>
                     </Row>
                 </Container>
             </section>
 
-            {/* Services */}
+            {/* Categories You May Like */}
 
-            <section className="services-section py-5 bg-light">
-                <Container>
-                    <div className="text-center">
-                        <h2 className="fw-bold mb-4">Our Services</h2>
-                        <div
-                            className="mx-auto mb-5"
-                            style={{ width: "60px", height: "3px", background: "#3A2E5F" }}
-                        ></div>
-                    </div>
-                    <Row className="g-4">
-                        {services.map((s, idx) => (
-                            <Col md={4} key={idx}>
-                                <Card className={`service-card ${visible.includes(String(idx)) ? "is-visible" : ""}`} data-idx={idx} ref={(el) => (refs.current[idx] = el)}>
-                                    <Card.Body className="text-center">
-                                        <div className="service-icon">{s.icon}</div>
-                                        <Card.Title className="mt-3">{s.title}</Card.Title>
-                                        <Card.Text className="text-muted small">{s.text}</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
+            <section className="category-carousel py-5">
+                <div className=" text-center">
+                    <h2 className="fw-bold mb-4">Our Product Categories</h2>
+                    <div
+                        className="mx-auto mb-5"
+                        style={{ width: "60px", height: "3px", background: "#3A2E5F" }}
+                    ></div>
+
+                    <Carousel controls={false} indicators={false} interval={3500} pause={false}>
+                        {categories.map((category, index) => (
+                            <Carousel.Item key={index}>
+                                <div className="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-3 p-3" >
+                                    {/* Main Big Category Card */}
+                                    <Card className="main-category-card shadow-lg" style={{background:"#3A2E5F"}}>
+                                        <Card.Img
+                                            variant="top"
+                                            src={category.image}
+                                            className="main-category-image"
+                                        />
+                                        <Card.Body>
+                                            <Card.Title className="fw-bold text-light  mb-0">
+                                                {category.title}
+                                            </Card.Title>
+                                        </Card.Body>
+                                    </Card>
+
+                                    {/* Products Cards */}
+                                    {category.products.map((prod, idx) => (
+                                        <Card key={idx} className="product-card shadow-sm">
+                                            <Card.Img
+                                                variant="top"
+                                                src={prod.image}
+                                                className="main-category-image"
+                                            />
+                                            <Card.Body>
+                                                <Card.Title className="fw-semibold mb-0">
+                                                    {prod.name}
+                                                </Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    ))}
+                                </div>
+                            </Carousel.Item>
                         ))}
-                    </Row>
-                </Container>
+                    </Carousel>
+                </div>
             </section>
 
             {/* Product Categlog */}

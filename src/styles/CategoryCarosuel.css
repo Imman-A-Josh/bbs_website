@@ -1,0 +1,77 @@
+.category-carousel {
+  background-color: #f9fafc;
+}
+
+/* 🟦 Main Big Category Card */
+.main-category-card {
+  border: none;
+  border-radius: 18px;
+  width: 280px;            /* Bigger width for main category */
+  transition: transform 0.3s ease;
+  background-color: #ffffff;
+}
+
+.main-category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.main-category-image {
+  height: 220px;            /* Increased height */
+  object-fit: cover;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+/* 🟩 Product Cards */
+.product-card {
+  border: none;
+  border-radius: 14px;
+  width: 170px;
+  transition: transform 0.3s ease;
+  background-color: #ffffff;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  height: 160px;            /* Taller row look */
+  object-fit: cover;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+/* 🟨 Title Styling */
+.main-category-card .card-title {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.product-card .card-title {
+  font-size: 1rem;
+  color: #0a2540;
+  text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  .main-category-card {
+    width: 220px;
+    margin-bottom: 10px;
+  }
+
+  .product-card {
+    width: 140px;
+    margin-bottom: 10px;
+  }
+
+  .main-category-image {
+    height: 180px;
+  }
+
+  .product-image {
+    height: 130px;
+  }
+}

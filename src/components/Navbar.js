@@ -42,7 +42,7 @@ const NavBar = () => {
                                 `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"}`
                             }
                         >
-                            Petroleum
+                            About
                         </Nav.Link>
 
                         <Nav.Link
@@ -52,7 +52,7 @@ const NavBar = () => {
                                 `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"}`
                             }
                         >
-                            Metals
+                            Products
                         </Nav.Link>
 
                         <Nav.Link
@@ -62,7 +62,7 @@ const NavBar = () => {
                                 `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"}`
                             }
                         >
-                            Agro
+                            Services
                         </Nav.Link>
 
                         <Nav.Link
@@ -72,19 +72,19 @@ const NavBar = () => {
                                 `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"}`
                             }
                         >
-                            Vision
+                            Blogs
                         </Nav.Link>
 
                     </Nav>
-                        <Button
-                            as={NavLink}
-                            to="/contact"
-                            variant="primary"
-                            className="fw-semibold px-4 py-2"
-                            style={{ backgroundColor: "#3A2E5F", border: "none", borderRadius: "6px" }}
-                        >
-                            Contact Us
-                        </Button>
+                    <Button
+                        as={NavLink}
+                        to="/contact"
+                        variant="primary"
+                        className="fw-semibold px-4 py-2"
+                        style={{ backgroundColor: "#3A2E5F", border: "none", borderRadius: "6px" }}
+                    >
+                        Contact Us
+                    </Button>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
