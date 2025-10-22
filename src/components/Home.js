@@ -1,10 +1,11 @@
-import { Container, Button, Row, Col, Card, Carousel, Badge } from "react-bootstrap";
-import "./HomeFull.css";
+import { Container, Button, Row, Col, Card, Carousel, Accordion } from "react-bootstrap";
+// import "./HomeFull.css";
 import CountUp from 'react-countup';
-import Blog1 from '../Assets/blog1.jpg';
-import Blog2 from '../Assets/blog2.jpg';
-import Blog3 from '../Assets/blog3.jpg';
+// import Blog1 from '../Assets/blog1.jpg';
+// import Blog2 from '../Assets/blog2.jpg';
+// import Blog3 from '../Assets/blog3.jpg';
 import "../styles/CategoryCarosuel.css";
+import "../styles/FAQSection.css";
 
 import pet1 from '../Assets/p1.avif';
 import pet2 from '../Assets/p2.avif';
@@ -25,16 +26,50 @@ import metalImage3 from '../Assets/metal3.jpg';
 import metalImage4 from '../Assets/metal4.jpg';
 import metalImage5 from '../Assets/metal5.avif';
 import metalImage6 from '../Assets/metal6.avif';
-import metalImage7 from '../Assets/metal7.jpg';
 
+import HomeBannerImage from '../Assets/homebanner.jpg'
 
-import { FaSmile, FaStar, FaGlobe, FaBolt } from "react-icons/fa";
-
-const features = [
-    { icon: <FaSmile />, title: "Client Satisfaction" },
-    { icon: <FaStar />, title: "24/7 Support" },
-    { icon: <FaGlobe />, title: "Global Service" },
-    { icon: <FaBolt />, title: "Advanced Tech" },
+const faqs = [
+    {
+        question: "1. What is BIBLIA BUSINESS SOLUTIONS (INDIA) PRIVATE LIMITED (BBS INDIA PVT LTD) ?",
+        answer:
+            "BBS INDIA PVT LTD is an international trading company based in Chennai, India, specializing in petroleum, minerals, food products, apparel, and coal.",
+    },
+    {
+        question: "2. Where is BBS India Pvt Ltd located ?",
+        answer:
+            "Our headquarters are located at Raheja Towers, 306 Mount Road, Chennai, India. From here, we manage operations and coordinate exports to clients worldwide.",
+    },
+    {
+        question: "3. What products do you trade ?",
+        answer:
+            "Our trade portfolio includes petroleum products, minerals, rice, maize, sugar, apparel, and coal.",
+    },
+    {
+        question: "4. Do you handle both imports and exports ?",
+        answer:
+            "Yes. We manage both import and export operations, serving clients globally with reliable logistics and trade expertise.",
+    },
+    {
+        question: "5. Which countries do you operate in ?",
+        answer:
+            "We operate internationally, supplying goods to clients across Asia, the Middle East, Africa, and Europe.",
+    },
+    {
+        question: "6. What makes BBS INDIA PVT LTD different from others ?",
+        answer:
+            "Our commitment to excellence, integrity, and customer satisfaction sets us apart. We focus on quality products, transparent business practices, and long-term partnerships.",
+    },
+    {
+        question: "7. How can I contact your team for business inquiries ?",
+        answer:
+            "You can reach us via email or phone (add your contact details here) or visit our office at Raheja Towers, Chennai.",
+    },
+    {
+        question: "8. Do you offer customized trade solutions ?",
+        answer:
+            "Yes. We tailor our services to meet the specific needs of our clients, ensuring efficiency and satisfaction in every deal.",
+    },
 ];
 
 const categories = [
@@ -75,111 +110,80 @@ const categories = [
 
 const HeroSection = () => {
 
-    const cardData = [
-        {
-            image: Blog1,
-            title: 'Best UI components for modern websites',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.'
-        },
-        {
-            image: Blog2,
-            title: '9 simple ways to improve your design skills',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.'
-        },
-        {
-            image: Blog3,
-            title: 'Tips to quickly improve your coding speed.',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.'
-        }
-    ];
-
     return (
 
         <>
             <section
                 id="home"
-                className="d-flex align-items-center mt-4 "
+                className="d-flex align-items-center mt-5"
                 style={{
-                    minHeight: "100vh",
+                    // minHeight: "100vh",
                     backgroundColor: "#fff",
                     overflow: "hidden",
                 }}
             >
                 <Container>
-                    <Row className="align-items-center">
+                    <Row className="align-items-center mt-5">
                         {/* Left Content */}
-                        <Col md={6} className="text-start p-3">
-                            <h1 className="fw-bold display-5 mb-3">
-                                International Trade{" "}
-                                <span style={{ color: "#3A2E5F" }}>Reality</span>
+                        <Col md={6} className="text-start p-4">
+                            <h1 className="fw-bold mb-2 mt-4" style={{ lineHeight: "1.2" }}>
+                                <span style={{ fontSize: "45x", color: "#1F1F3D" }}>From Export to Impact</span> <br />
+                                <span style={{ fontSize: "28px", color: "#6C63FF", marginTop: "10px", display: "block" }}>
+                                    Real Stories of International Trade
+                                </span>
                             </h1>
 
-                            <p className="lead mb-4 mt-4" style={{ color: "#555" }}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rem repellendus quasi fuga nesciunt
-                                dolorum nulla magnam veniam sapiente, fugiat! Lorem ipsum dolor sit amet.
+                            <p className="lead mb-4 mt-4" style={{ color: "#555", fontSize: "18px" }}>
+                                Every product that crosses borders tells a story. From small-scale businesses to global enterprises, exports create opportunities, drive innovation, and fuel economic growth. Explore how trade transforms ideas into tangible impact around the world
                             </p>
 
-
-                            <div className="d-flex gap-3 mt-5">
+                            <div className="d-flex gap-3 mt-4">
                                 <Button
                                     variant="primary"
-                                    className="px-4 py-2 fw-semibold shadow-sm"
+                                    className="px-5 py-2 fw-semibold shadow-sm"
                                     style={{
-                                        borderRadius: "8px",
-                                        backgroundColor: "#3A2E5F",
+                                        borderRadius: "10px",
+                                        backgroundColor: "#6C63FF",
                                         border: "none",
+                                        transition: "transform 0.2s",
                                     }}
+                                    onMouseOver={e => e.currentTarget.style.transform = "scale(1.05)"}
+                                    onMouseOut={e => e.currentTarget.style.transform = "scale(1)"}
                                 >
-                                    Explore Products →
+                                    Explore Stories →
                                 </Button>
 
                                 <Button
                                     variant="outline-secondary"
-                                    className="px-4 py-2 fw-semibold"
-                                    style={{ borderRadius: "8px" }}
+                                    className="px-5 py-2 fw-semibold"
+                                    style={{
+                                        borderRadius: "10px",
+                                        borderColor: "#6C63FF",
+                                        color: "#6C63FF",
+                                        transition: "all 0.2s",
+                                    }}
+                                    onMouseOver={e => {
+                                        e.currentTarget.style.backgroundColor = "#6C63FF";
+                                        e.currentTarget.style.color = "#fff";
+                                    }}
+                                    onMouseOut={e => {
+                                        e.currentTarget.style.backgroundColor = "transparent";
+                                        e.currentTarget.style.color = "#6C63FF";
+                                    }}
                                 >
                                     Contact Us →
                                 </Button>
                             </div>
                         </Col>
 
+
                         <Col md={6} className="text-center mt-5 mt-md-0">
                             <img
-                                src="https://img.freepik.com/premium-photo/people-suits-are-working-business-meeting-isolated-white-background-simple-style_660230-8713.jpg?w=360"
+                                src={HomeBannerImage}
                                 alt="developer"
                                 className="img-fluid"
                                 style={{ maxHeight: "500px", width: "100%", objectFit: "contain" }}
                             />
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
-
-
-            <section className="stats-section text-center pb-3">
-                <Container>
-                    <Row className="border text-light p-3 rounded-5" style={{ background: "#3A2E5F" }}>
-                        <Col md={3}>
-                            <h1 className="stat-number text-light">
-                                <CountUp end={100} duration={5} />+
-                            </h1>
-                            <p className="stat-label text-light">Our Products</p>
-                        </Col>
-                        <Col md={3}>
-                            <h1 className="stat-number text-light">
-                                <CountUp end={500} duration={5} />+
-                            </h1>
-                            <p className="stat-label text-light">Worldwide Sourcing</p>
-                        </Col>
-                        <Col md={3}>
-                            <h1 className="stat-number text-light">
-                                <CountUp end={50} duration={5} />+
-                            </h1>
-                            <p className="stat-label text-light">Branches</p>
-                        </Col>
-                        <Col md={3}>
-                            <h1 className="stat-number text-light">24/7</h1>
-                            <p className="stat-label text-light">Availability</p>
                         </Col>
                     </Row>
                 </Container>
@@ -219,6 +223,38 @@ const HeroSection = () => {
                 </Container>
             </section>
 
+            <section className="stats-section text-center pb-3">
+                <Container>
+                    <Row className="border text-light p-3 rounded-5" style={{ background: "#3A2E5F" }}>
+                        <Col md={3}>
+                            <h1 className="stat-number text-light">
+                                <CountUp end={100} duration={5} />+
+                            </h1>
+                            <p className="stat-label text-light">Our Products</p>
+                        </Col>
+                        <Col md={3}>
+                            <h1 className="stat-number text-light">
+                                <CountUp end={25} duration={5} />+
+                            </h1>
+                            <p className="stat-label text-light">Exporting Countries</p>
+                        </Col>
+                        <Col md={3}>
+                            <h1 className="stat-number text-light">
+                                <CountUp end={500} duration={5} />+
+                            </h1>
+                            <p className="stat-label text-light">100% Satisfied Clients</p>
+                        </Col>
+                        <Col md={3}>
+                            <h1 className="stat-number text-light">
+                                <CountUp end={50} duration={5} />+
+                            </h1>
+                            <p className="stat-label text-light">Branches</p>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
+
             {/* Categories You May Like */}
 
             <section className="category-carousel py-5">
@@ -234,7 +270,7 @@ const HeroSection = () => {
                             <Carousel.Item key={index}>
                                 <div className="d-flex justify-content-center align-items-center flex-wrap gap-2 mt-3 p-3" >
                                     {/* Main Big Category Card */}
-                                    <Card className="main-category-card shadow-lg" style={{background:"#3A2E5F"}}>
+                                    <Card className="main-category-card " style={{ background: "#3A2E5F" }}>
                                         <Card.Img
                                             variant="top"
                                             src={category.image}
@@ -269,79 +305,25 @@ const HeroSection = () => {
                 </div>
             </section>
 
-            {/* Product Categlog */}
-
-            <section id="#catelog" className="py-5 text-center">
+            <section className="faq-section py-5">
                 <Container>
-                    <Row>
-                        <div className="text-center">
-                            <h2 className="fw-bold mb-4">Product Categlog</h2>
-                            <div
-                                className="mx-auto mb-5"
-                                style={{ width: "60px", height: "3px", background: "#3A2E5F" }}
-                            ></div>
-                        </div>
-                        <Col md={6}>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDCZiyv4ZGfGBkhPKOWoO12ihExHTNtkfHvw&s" className="w-100" alt="Product Categlog" />
-                        </Col>
-                        <Col md={6}>
-                            <p>
-                                At BIBLIA BUSINESS SOLUTIONS (INDIA) PRIVATE LIMITED, we are dedicated to facilitating seamless international trade operations and fostering global business connections. Our team comprises experienced professionals with in-depth knowledge of international trade regulations, market trends, and global business practices. We are committed to delivering exceptional services that drive international trade success for our clients.
-                            </p>
-                            <p>At BIBLIA BUSINESS SOLUTIONS (INDIA) PRIVATE LIMITED, we are dedicated to facilitating seamless international trade operations and fostering global business connections. Our team comprises experienced professionals with in-depth knowledge of international trade regulations, market trends, and global business practices. We are committed to delivering exceptional services that drive international trade success for our clients.</p>
-                        </Col>
-                    </Row>
+                    <h2 className="text-center mb-4 fw-bold text-light">Frequently Asked Questions</h2>
+                    <p className="text-center mb-5 text-light">
+                        Learn more about BBS India Pvt Ltd, our services, and how we help clients succeed in international trade.
+                    </p>
+
+                    <Accordion defaultActiveKey="0" flush>
+                        {faqs.map((faq, index) => (
+                            <Accordion.Item eventKey={index.toString()} key={index} className="faq-item mb-3">
+                                <Accordion.Header>{faq.question}</Accordion.Header>
+                                <Accordion.Body>{faq.answer}</Accordion.Body>
+                            </Accordion.Item>
+                        ))}
+                    </Accordion>
                 </Container>
-
-            </section>
-
-
-            <section className="features-section">
-                <div className="features-container">
-                    {features.map((feature, index) => (
-                        <div className="feature-card" key={index}>
-                            <div className="icon-box">{feature.icon}</div>
-                            <h5>{feature.title}</h5>
-                        </div>
-                    ))}
-                </div>
             </section>
 
             {/* Blogs */}
-
-            <section id='blogs'>
-                <Container className="py-5 text-center">
-                    <h2 className="fw-bold mb-4">Blogs</h2>
-                    <div className="mx-auto mb-5" style={{ width: "60px", height: "3px", background: "#3A2E5F" }}></div>
-                    <Row>
-                        {cardData.map((card, index) => (
-                            <Col md={4} className="mb-4" key={index}>
-                                <Card className="h-100 text-white border-rounded">
-                                    <div className="position-relative">
-                                        <Card.Img
-                                            variant="top"
-                                            src={card.image}
-                                            alt={card.title}
-                                            style={{ height: '250px', objectFit: 'cover' }}
-                                        />
-                                        <Badge
-                                            bg="primary"
-                                            className="position-absolute top-0 start-0 m-2"
-                                        >
-                                        </Badge>
-                                    </div>
-                                    <Card.Body>
-                                        <Card.Title className="fw-bold">{card.title}</Card.Title>
-                                        <Card.Text className="text-secondary">
-                                            {card.text}
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        ))}
-                    </Row>
-                </Container>
-            </section>
 
             <section className="contact-cta py-5">
                 <Container className="text-center">

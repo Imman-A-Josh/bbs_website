@@ -1,0 +1,52 @@
+.faq-section {
+    background-color: #3a2e5f;
+    background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+    min-height: 100vh;
+}
+
+.faq-section h2 {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+}
+
+.faq-section p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Accordion Design */
+.accordion-button {
+    background-color: #4b3b73 !important;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-button:hover {
+    background-color: #5a4691 !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #5a4691 !important;
+    color: #fff !important;
+    box-shadow: none;
+}
+
+.accordion-body {
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 0 0 10px 10px;
+    font-size: 0.95rem;
+    padding: 1rem 1.25rem;
+}
+
+.accordion-item {
+    border: none !important;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}

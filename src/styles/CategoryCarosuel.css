@@ -75,3 +75,38 @@
     height: 130px;
   }
 }
+
+/* Smooth transition for hover effects */
+.team-card {
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* On hover — lift and shadow effect */
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image zoom effect inside hover */
+.team-card img {
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Optional: make background glow slightly */
+.team-card:hover {
+  background-color: #fff;
+}
+
+/* Optional link color if you add links later */
+.team-card a {
+  transition: color 0.3s ease;
+}
+
+.team-card:hover a {
+  color: #3A2E5F;
+}

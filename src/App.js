@@ -5,11 +5,11 @@ import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Petroleum from "./components/Petroleum";
+import About from "./components/About";
 import Metals from "./components/Metals";
 import Agro from "./components/Agro";
-import About from "./components/About";
-import Homefront from "./components/Homefront";
+// import About from "./components/About";
+// import Homefront from "./components/Homefront";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -20,11 +20,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/petroleum" element={<Petroleum />} />
+        <Route path="/about" element={<About />} />
         <Route path="/metals" element={<Metals />} />
         <Route path="/agro" element={<Agro />} />
-        <Route path="/vision" element={<About />} />
-        <Route path="/house" element={<Homefront />} />
+        {/* <Route path="/vision" element={<About />} />
+        <Route path="/house" element={<Homefront />} /> */}
       </Routes>
       <Footer />
     </Router>
