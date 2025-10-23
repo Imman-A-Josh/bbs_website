@@ -4,6 +4,7 @@ import { FaMedal, FaSeedling, FaStar, FaShip, FaUsers, FaGoogle } from "react-ic
 import CountUp from 'react-countup';
 import "../styles/CategoryCarosuel.css";
 import "../styles/FAQSection.css";
+import { useNavigate } from "react-router-dom";
 
 import ScrollToTopButton from "../components/ScrollToTopButton";
 
@@ -28,7 +29,9 @@ import metalImage6 from '../Assets/metal6.avif';
 
 import NickelImage from '../Assets/nickel.jpg';
 
-import HomeBannerImage from '../Assets/homebanner.jpg'
+import HomeBannerImage from '../Assets/newHome.png'
+import HomeBackgroundImage from '../Assets/backgroundHome.jpg'
+
 
 const faqs = [
     {
@@ -139,49 +142,68 @@ const HeroSection = () => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
+    const navigate = useNavigate();
+
+    function handleNavigateClick(value) {
+        console.log("value", value);
+
+        navigate(value);
+    }
+
     return (
         <>
             <section
-                id="home"
+                id="contact-hero"
                 className="d-flex align-items-center mt-5"
                 style={{
-                    // minHeight: "100vh",
-                    backgroundColor: "#fff",
-                    overflow: "hidden",
+                    backgroundImage: `url(${HomeBackgroundImage})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    minHeight: "80vh",
+                    position: "relative",
+                    color: "white",
                 }}
             >
-                <Container>
-                    <Row className="align-items-center mt-5">
-                        {/* Left Content */}
-                        <Col md={6} className="text-start p-4 mt-3">
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        backgroundColor: "rgba(0, 0, 0, 0.55)",
+                        zIndex: 1,
+                    }}
+                ></div>
+
+                <Container style={{ position: "relative", zIndex: 2 }}>
+                    <Row className="align-items-center mt-4">
+                        <Col md={12} className="text-start p-4 mt-3">
                             <h1 className="fw-bold mb-2 mt-4" style={{ lineHeight: "1.2" }}>
-                                <span style={{ fontSize: "45x", color: "#6C63FF" }}> <span style={{ fontSize: "55px" }}>F</span>rom Export to Impact</span> <br />
-                                <span style={{ fontSize: "28px", color: "#C56F28", marginTop: "10px", display: "block" }}>
+                                <span style={{ fontSize: "45x" }}> <span style={{ fontSize: "55px" }}>F</span>rom Export to Impact</span> <br />
+                                <span style={{ fontSize: "28px", marginTop: "10px", display: "block" }}>
                                     Real Stories of International Trade
                                 </span>
                             </h1>
 
-                            <p className="lead mb-4 mt-4 lh-lg" style={{ color: "#555", fontSize: "15px" }}>
+                            <p className="lead mb-4 mt-4 lh-lg" style={{ fontSize: "15px" }}>
                                 Every product that crosses borders tells a story. From small-scale businesses to global enterprises, exports create opportunities, drive innovation, and fuel economic growth. Explore how trade transforms ideas into tangible impact around the world
                             </p>
 
                             <div className="d-flex gap-3 mt-4">
                                 <Button
-                                    variant="outline-secondary"
+                                    onClick={() => handleNavigateClick("/contact")}
+                                    variant="outline-light"
                                     className="px-5 py-2 fw-semibold"
                                     style={{
                                         borderRadius: "10px",
-                                        borderColor: "#6C63FF",
-                                        color: "#6C63FF",
-                                        transition: "all 0.2s",
+                                        transition: "all 0.3s",
                                     }}
-                                    onMouseOver={e => {
-                                        e.currentTarget.style.backgroundColor = "#6C63FF";
-                                        e.currentTarget.style.color = "#fff";
+                                    onMouseOver={(e) => {
+                                        e.currentTarget.style.backgroundColor = "#ffffff";
+                                        e.currentTarget.style.color = "#3A2E5F";
                                     }}
-                                    onMouseOut={e => {
+                                    onMouseOut={(e) => {
                                         e.currentTarget.style.backgroundColor = "transparent";
-                                        e.currentTarget.style.color = "#6C63FF";
+                                        e.currentTarget.style.color = "#fff";
                                     }}
                                 >
                                     Contact Us →
@@ -189,15 +211,19 @@ const HeroSection = () => {
                             </div>
                         </Col>
 
-
-                        <Col md={6} className="text-center mt-5 mt-md-0">
+                        {/* Right Image (optional) */}
+                        {/* <Col md={6} className="text-center mt-5 mt-md-0">
                             <img
                                 src={HomeBannerImage}
-                                alt="developer"
+                                alt="Contact Illustration"
                                 className="img-fluid"
-                                style={{ maxHeight: "500px", width: "100%", objectFit: "contain" }}
+                                style={{
+                                    maxHeight: "400px",
+                                    width: "100%",
+                                    objectFit: "contain",
+                                }}
                             />
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Container>
             </section>
@@ -275,6 +301,7 @@ const HeroSection = () => {
                             </p>
                             <Button
                                 variant="primary"
+                                onClick={() => handleNavigateClick('/about')}
                                 className="fw-semibold px-4 py-2"
                                 style={{ backgroundColor: "#3A2E5F", border: "none", borderRadius: "6px", }}
                             >
@@ -293,6 +320,7 @@ const HeroSection = () => {
                     </div>
                     <Button
                         variant="primary"
+                        onClick={() => handleNavigateClick('/services')}
                         className="fw-semibold px-4 py-2"
                         style={{ backgroundColor: "#3A2E5F", border: "none", borderRadius: "6px", }}
                     >
