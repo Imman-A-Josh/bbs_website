@@ -1,11 +1,14 @@
 import React from 'react';
 import { Container, Row, Card, Col } from 'react-bootstrap';
 import metalImage2 from '../Assets/metal2.avif';
-import metalImage3 from '../Assets/metal3.jpg';
+// import metalImage3 from '../Assets/metal3.jpg';
 import metalImage4 from '../Assets/metal4.jpg';
 import metalImage5 from '../Assets/metal5.avif';
 import metalImage6 from '../Assets/metal6.avif';
 import metalImage7 from '../Assets/metal7.jpg';
+
+import NickelImage from '../Assets/nickel.jpg';
+
 
 import metalImage1 from '../Assets/metal1.avif';
 
@@ -18,14 +21,19 @@ const metals = () => {
             img: metalImage2,
         },
         {
-            title: "Nickel Ore",
-            description: "Iron ore is a mineral resource primarily composed of iron oxides like hematite and magnetite. It is essential for steel production and is mined from open-pit and underground operations, processed to produce iron and steel products.",
-            img: metalImage3,
-        },
-        {
             title: "Bauxite",
             description: "Iron ore is a mineral resource primarily composed of iron oxides like hematite and magnetite. It is essential for steel production and is mined from open-pit and underground operations, processed to produce iron and steel products.",
             img: metalImage4,
+        },
+        {
+            title: "Copper",
+            description: "Iron ore is a mineral resource primarily composed of iron oxides like hematite and magnetite. It is essential for steel production and is mined from open-pit and underground operations, processed to produce iron and steel products.",
+            img: metalImage7,
+        },
+        {
+            title: "Nickel Ore",
+            description: "Iron ore is a mineral resource primarily composed of iron oxides like hematite and magnetite. It is essential for steel production and is mined from open-pit and underground operations, processed to produce iron and steel products.",
+            img: NickelImage,
         },
         {
             title: "QUARTZ",
@@ -37,11 +45,7 @@ const metals = () => {
             description: "Aluminum ingots are solid forms produced through smelting, essential in industries like automotive and aerospace. Their lightweight, corrosion-resistant properties allow for easy shaping, making them versatile for various applications",
             img: metalImage6,
         },
-        {
-            title: "Copper",
-            description: "Iron ore is a mineral resource primarily composed of iron oxides like hematite and magnetite. It is essential for steel production and is mined from open-pit and underground operations, processed to produce iron and steel products.",
-            img: metalImage7,
-        },
+
         // {
         //     title: "Coal",
         //     description: "Supporting content 6.",
@@ -54,21 +58,15 @@ const metals = () => {
 
         <section id='metals' className="py-4">
 
-            <div className="image-container position-relative text-center">
-                <img
-                    src={metalImage1}
-                    alt="Iron Ore Mines"
-                    className="img-fluid w-100"
-                    style={{ height: "700px", objectFit: "cover" }}
-                />
-                <div
-                    className="overlay-text position-absolute top-50 start-50 translate-middle text-white"
-                    style={{ fontSize: "4rem", fontWeight: "bold", letterSpacing: "0.2rem" }}
-                >
-                    <div className='text-dark'>IRON ORE</div>
-                    <div>MINES</div>
+            <section className="about-banner-section">
+                <div className="image-container position-relative text-center">
+                    <img
+                        src={metalImage1}
+                        alt="Banner"
+                        className="banner-img"
+                    />
                 </div>
-            </div>
+            </section>
 
             <Container>
 
@@ -85,18 +83,6 @@ const metals = () => {
                         Welcome to BBS, a trusted supplier of high-quality minerals and metals, including iron ore and quartz. We are committed to providing reliable service and excellence in every transaction.
                     </p>
                 </Row>
-
-                {/* <Row className="mb-4" style={{ justifyContent: 'center' }}>
-                    <Col md={8}>
-                        <Card className="text-white">
-                            <Card.Img src={contentData[0].img} height={300} width={300} alt={contentData[0].title} />
-                            <Card.ImgOverlay className="d-flex flex-column justify-content-end bg-dark bg-opacity-50 p-3">
-                                <Card.Title>{contentData[0].title}</Card.Title>
-                                <Card.Text>{contentData[0].description}</Card.Text>
-                            </Card.ImgOverlay>
-                        </Card>
-                    </Col>
-                </Row> */}
 
                 <Row className="g-4 mt-4">
                     {contentData.map((item, index) => (

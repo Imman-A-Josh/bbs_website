@@ -1,11 +1,11 @@
-import { Container, Button, Row, Col, Card, Carousel, Accordion } from "react-bootstrap";
-// import "./HomeFull.css";
+import { Container, Button, Row, Col, Card, Carousel } from "react-bootstrap";
+import React, { useState } from "react";
+import { FaMedal, FaSeedling, FaStar, FaShip, FaUsers, FaGoogle } from "react-icons/fa";
 import CountUp from 'react-countup';
-// import Blog1 from '../Assets/blog1.jpg';
-// import Blog2 from '../Assets/blog2.jpg';
-// import Blog3 from '../Assets/blog3.jpg';
 import "../styles/CategoryCarosuel.css";
 import "../styles/FAQSection.css";
+
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 import pet1 from '../Assets/p1.avif';
 import pet2 from '../Assets/p2.avif';
@@ -22,10 +22,11 @@ import soyaImage from '../Assets/soya.jpg';
 
 import metalImage1 from '../Assets/metal1.avif';
 import metalImage2 from '../Assets/metal2.avif';
-import metalImage3 from '../Assets/metal3.jpg';
 import metalImage4 from '../Assets/metal4.jpg';
 import metalImage5 from '../Assets/metal5.avif';
 import metalImage6 from '../Assets/metal6.avif';
+
+import NickelImage from '../Assets/nickel.jpg';
 
 import HomeBannerImage from '../Assets/homebanner.jpg'
 
@@ -84,7 +85,7 @@ const categories = [
         ],
     },
     {
-        title: "Agriculture",
+        title: "Agro Products",
         image: agroImage1,
         products: [
             { name: "Wheat", image: wheatImage },
@@ -99,7 +100,7 @@ const categories = [
         image: metalImage1,
         products: [
             { name: "IRON ORE", image: metalImage2 },
-            { name: "Nickel Ore", image: metalImage3 },
+            { name: "Nickel Ore", image: NickelImage },
             { name: "Bauxite", image: metalImage4 },
             { name: "QUARTZ", image: metalImage5 },
             { name: "Aluminum", image: metalImage6 },
@@ -108,10 +109,37 @@ const categories = [
     },
 ]
 
+const testimonials = [
+    {
+        name: "Ramesh Kumar",
+        feedback:
+            "Outstanding quality of rice and excellent export service. Their team is very responsive and professional.",
+        rating: 5,
+    },
+    {
+        name: "Anita Sharma",
+        feedback:
+            "We’ve been importing from BBS India for years. Consistent quality and timely delivery every single time!",
+        rating: 5,
+    },
+    {
+        name: "Ahmed Al-Farsi",
+        feedback:
+            "Top-grade rice and smooth logistics process. Truly a trusted partner for international trade.",
+        rating: 5,
+    },
+];
+
+
 const HeroSection = () => {
 
-    return (
+    const [activeIndex, setActiveIndex] = useState(null);
 
+    const toggleFAQ = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
+    return (
         <>
             <section
                 id="home"
@@ -125,34 +153,19 @@ const HeroSection = () => {
                 <Container>
                     <Row className="align-items-center mt-5">
                         {/* Left Content */}
-                        <Col md={6} className="text-start p-4">
+                        <Col md={6} className="text-start p-4 mt-3">
                             <h1 className="fw-bold mb-2 mt-4" style={{ lineHeight: "1.2" }}>
-                                <span style={{ fontSize: "45x", color: "#1F1F3D" }}>From Export to Impact</span> <br />
-                                <span style={{ fontSize: "28px", color: "#6C63FF", marginTop: "10px", display: "block" }}>
+                                <span style={{ fontSize: "45x", color: "#6C63FF" }}> <span style={{ fontSize: "55px" }}>F</span>rom Export to Impact</span> <br />
+                                <span style={{ fontSize: "28px", color: "#C56F28", marginTop: "10px", display: "block" }}>
                                     Real Stories of International Trade
                                 </span>
                             </h1>
 
-                            <p className="lead mb-4 mt-4" style={{ color: "#555", fontSize: "18px" }}>
+                            <p className="lead mb-4 mt-4 lh-lg" style={{ color: "#555", fontSize: "15px" }}>
                                 Every product that crosses borders tells a story. From small-scale businesses to global enterprises, exports create opportunities, drive innovation, and fuel economic growth. Explore how trade transforms ideas into tangible impact around the world
                             </p>
 
                             <div className="d-flex gap-3 mt-4">
-                                <Button
-                                    variant="primary"
-                                    className="px-5 py-2 fw-semibold shadow-sm"
-                                    style={{
-                                        borderRadius: "10px",
-                                        backgroundColor: "#6C63FF",
-                                        border: "none",
-                                        transition: "transform 0.2s",
-                                    }}
-                                    onMouseOver={e => e.currentTarget.style.transform = "scale(1.05)"}
-                                    onMouseOut={e => e.currentTarget.style.transform = "scale(1)"}
-                                >
-                                    Explore Stories →
-                                </Button>
-
                                 <Button
                                     variant="outline-secondary"
                                     className="px-5 py-2 fw-semibold"
@@ -189,9 +202,58 @@ const HeroSection = () => {
                 </Container>
             </section>
 
+            <section className="stats-section text-center py-5 mt-5">
+                <Container>
+                    <Row className="p-4 rounded-4 text-light align-items-center justify-content-center" style={{ background: "#1c1c1c" }}>
+                        {/* Years of Experience */}
+                        <Col md={2}>
+                            <FaMedal size={40} className="mb-3 text-warning" />
+                            <h2 className="fw-bold mb-0">
+                                <CountUp end={20} duration={3} />+
+                            </h2>
+                            <p className="small text-light mt-2">Years of Experience</p>
+                        </Col>
+
+                        {/* Rice Products */}
+                        <Col md={2}>
+                            <FaSeedling size={40} className="mb-3 text-success" />
+                            <h2 className="fw-bold mb-0">
+                                <CountUp end={50} duration={3} />+
+                            </h2>
+                            <p className="small text-light mt-2">Agro Products</p>
+                        </Col>
+
+                        {/* Exporting Countries */}
+                        <Col md={2}>
+                            <FaShip size={40} className="mb-3 text-primary" />
+                            <h2 className="fw-bold mb-0">
+                                <CountUp end={25} duration={3} />+
+                            </h2>
+                            <p className="small text-light mt-2">Exporting Countries</p>
+                        </Col>
+
+                        {/* Satisfied Clients */}
+                        <Col md={2}>
+                            <FaUsers size={40} className="mb-3 text-danger" />
+                            <h2 className="fw-bold mb-0">
+                                <CountUp end={500} duration={3} />+
+                            </h2>
+                            <p className="small text-light mt-2">100% Satisfied Clients</p>
+                        </Col>
+
+                        {/* Google Review */}
+                        <Col md={2}>
+                            <FaGoogle size={40} className="mb-3 text-warning" />
+                            <h2 className="fw-bold mb-0">4.8</h2>
+                            <p className="small text-light mt-2">Google Review</p>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
             {/* About Section */}
 
-            <section className="about-section py-5" style={{ background: "#fff" }}>
+            <section className="about-section mb-5" style={{ background: "#fff" }}>
                 <Container>
                     <Row className="align-items-center g-4">
                         <Col md={6}>
@@ -223,35 +285,20 @@ const HeroSection = () => {
                 </Container>
             </section>
 
-            <section className="stats-section text-center pb-3">
-                <Container>
-                    <Row className="border text-light p-3 rounded-5" style={{ background: "#3A2E5F" }}>
-                        <Col md={3}>
-                            <h1 className="stat-number text-light">
-                                <CountUp end={100} duration={5} />+
-                            </h1>
-                            <p className="stat-label text-light">Our Products</p>
-                        </Col>
-                        <Col md={3}>
-                            <h1 className="stat-number text-light">
-                                <CountUp end={25} duration={5} />+
-                            </h1>
-                            <p className="stat-label text-light">Exporting Countries</p>
-                        </Col>
-                        <Col md={3}>
-                            <h1 className="stat-number text-light">
-                                <CountUp end={500} duration={5} />+
-                            </h1>
-                            <p className="stat-label text-light">100% Satisfied Clients</p>
-                        </Col>
-                        <Col md={3}>
-                            <h1 className="stat-number text-light">
-                                <CountUp end={50} duration={5} />+
-                            </h1>
-                            <p className="stat-label text-light">Branches</p>
-                        </Col>
-                    </Row>
-                </Container>
+            <section>
+                <div className="additional-section text-center d-flex flex-column align-items-center justify-content-center">
+                    <p className="tagline mb-2">Innovate. Build. Grow.</p>
+                    <h2 className="title mb-3">Welcome to BBS India Pvt Ltd</h2>
+                    <div className="rating d-flex align-items-center justify-content-center mb-3">
+                    </div>
+                    <Button
+                        variant="primary"
+                        className="fw-semibold px-4 py-2"
+                        style={{ backgroundColor: "#3A2E5F", border: "none", borderRadius: "6px", }}
+                    >
+                        Explore Our Services
+                    </Button>
+                </div>
             </section>
 
 
@@ -306,33 +353,85 @@ const HeroSection = () => {
             </section>
 
             <section className="faq-section py-5">
-                <Container>
-                    <h2 className="text-center mb-4 fw-bold text-light">Frequently Asked Questions</h2>
-                    <p className="text-center mb-5 text-light">
-                        Learn more about BBS India Pvt Ltd, our services, and how we help clients succeed in international trade.
-                    </p>
+                <Container className="py-4">
+                    <div className="text-center mb-5">
+                        <h2 className="fw-bold display-6 text-white">
+                            Frequently Asked Questions
+                        </h2>
+                    </div>
 
-                    <Accordion defaultActiveKey="0" flush>
+                    <Row className="gy-4 gx-4 justify-content-center">
                         {faqs.map((faq, index) => (
-                            <Accordion.Item eventKey={index.toString()} key={index} className="faq-item mb-3">
-                                <Accordion.Header>{faq.question}</Accordion.Header>
-                                <Accordion.Body>{faq.answer}</Accordion.Body>
-                            </Accordion.Item>
+                            <Col md={12} key={index}>
+                                <div
+                                    className={`faq-card p-3 rounded-4 shadow-sm h-100 ${activeIndex === index ? "active" : ""
+                                        }`}
+                                    onClick={() => toggleFAQ(index)}
+                                >
+                                    <div className="faq-question d-flex justify-content-between align-items-center">
+                                        <p className="fw-semibold mb-0">{faq.question}</p>
+                                        <span className="faq-icon">
+                                            {activeIndex === index ? "−" : "+"}
+                                        </span>
+                                    </div>
+
+                                    {activeIndex === index && (
+                                        <div className="faq-answer mt-3">
+                                            <p className="text-muted mb-0">{faq.answer}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            </Col>
                         ))}
-                    </Accordion>
+                    </Row>
                 </Container>
             </section>
 
             {/* Blogs */}
 
-            <section className="contact-cta py-5">
+            <section className="testimonial-section py-5">
+                <Container>
+                    <div className="text-center mb-5">
+                        <p className="text-light-50 mb-1" style={{ opacity: 0.8 }}>
+                            A good word means a lot
+                        </p>
+                        <h2 className="fw-bold text-dark">What Our Buyers Say About Us</h2>
+                    </div>
+
+                    <Row className="justify-content-center">
+                        {testimonials.map((t, index) => (
+                            <Col md={4} key={index} className="mb-4">
+                                <Card className="testimonial-card p-4 border-0 h-100 shadow-lg">
+                                    <div className="d-flex align-items-center mb-3">
+                                        <div className="avatar-circle me-3">
+                                            <span>{t.name.charAt(0)}</span>
+                                        </div>
+                                        <div>
+                                            <h6 className="fw-bold text-white mb-1">{t.name}</h6>
+                                            <div className="stars">
+                                                {[...Array(t.rating)].map((_, i) => (
+                                                    <FaStar key={i} color="#FFD700" />
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p className="text-white mb-0" style={{ fontSize: "13px" }}>{t.feedback}</p>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+            </section>
+            {/* <section className="contact-cta py-5">
                 <Container className="text-center">
                     <h3 className="fw-bold">Ready to Start a Project?</h3>
                     <p className="text-muted mb-4">Get a quote, discuss supply needs or request samples.</p>
                     <Button className="btn-primary-cta me-2">Request Quote</Button>
                     <Button variant="outline-dark" className="btn-outline-cta">Contact Sales</Button>
                 </Container>
-            </section>
+            </section> */}
+
+            <ScrollToTopButton />
 
         </>
 

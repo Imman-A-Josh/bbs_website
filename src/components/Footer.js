@@ -1,56 +1,71 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from '../Assets/logo.avif'
 
 const Footer = () => {
     return (
-        <footer style={{ backgroundColor: '#3A2E5F', color: 'white', paddingTop: '40px' }}>
+        <footer style={{ backgroundColor: '#3A2E5F', color: 'white', padding: '40px 20px' }}>
             <Container>
-                <Row className="pb-4">
-                    <Col md={4} className="mb-2">
-                        <div className="d-flex align-items-center mb-2">
-                            <img
-                                src={Logo}
-                                alt="Logo"
-                                style={{ width: '30px', marginRight: '10px' }}
-                            />
-                            <h5 className="mb-0 fw-bold">BIBLIA</h5>
-                        </div>
-                        <p style={{ maxWidth: '250px' }}>
-                            We are committed to delivering exceptional services that drive international trade success for our clients.
+                {/* Top Section */}
+                <Row className="mb-4">
+                    {/* Address */}
+                    <Col md={3} className="mb-3">
+                        <h6 className="fw-bold mb-3">Address</h6>
+                        <p style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                            306, Raheja Tower, Office No: 505,<br />
+                            5th Floor, Delta Wing, Anna Salai,<br />
+                            Tamil Nadu - 600002.
                         </p>
                     </Col>
 
-                    <Col md={3} className="mb-2">
-                        <h6 className="fw-bold">Company</h6>
-                        <ul className="list-unstyled  ">
-                            <li><a href="#about" className="text-decoration-none text-white">About</a></li>
-                            <li><a href="#product" className="text-decoration-none text-white">Products</a></li>
+                    {/* About Us & Products */}
+                    <Col md={3} className="mb-3">
+                        <h6 className="fw-bold mb-3">Company</h6>
+                        <ul className="list-unstyled" style={{ fontSize: '0.9rem', paddingLeft: 0 }}>
+                            <li style={{ marginBottom: '6px' }}>About Us</li>
+                            <li style={{ marginBottom: '6px' }}>Services</li>
+                            <li style={{ marginBottom: '6px' }}>Contact Us</li>
+                        </ul>
+
+                    </Col>
+                    <Col md={3}>
+                        <h6 className="fw-bold mb-3">Products</h6>
+                        <ul className="list-unstyled" style={{ fontSize: '0.9rem', paddingLeft: 0 }}>
+                            <li style={{ marginBottom: '6px' }}>Petroleum</li>
+                            <li style={{ marginBottom: '6px' }}>Metal & Mineral</li>
+                            <li style={{ marginBottom: '6px' }}>Agro Product</li>
+                            <li style={{ marginBottom: '6px' }}>Apparel</li>
                         </ul>
                     </Col>
 
-                    <Col md={3} className="mb-2">
-                        <h6 className="fw-bold">Resources</h6>
-                        <ul className="list-unstyled">
-                            <li><a href="#contact" className="text-decoration-none text-white">Contact us</a></li>
-                        </ul>
-                    </Col>
-
-                    <Col md={2} className="mb-2">
-                        <h6 className="fw-bold">Help</h6>
-                        <ul className="list-unstyled">
-                            <li><a href="#terms" className="text-decoration-none text-white">Terms of use</a></li>
-                            <li><a href="#cookies" className="text-decoration-none text-white">Cookies</a></li>
-                            <li><a href="#privacy" className="text-decoration-none text-white">Privacy policy</a></li>
-                        </ul>
+                    {/* Registered Office */}
+                    <Col md={3}>
+                        <h6 className="fw-bold">Registered Office</h6>
+                        <p style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                            Plot No- 164, Tasiowa Nagar,<br />
+                            Palanthandalam Village, Thirumudivakkam,<br />
+                            Chennai - 600 044.
+                        </p>
                     </Col>
                 </Row>
 
-                <hr />
+                {/* Branches */}
+                <Row className="mb-4">
+                    <Col md={6}>
+                        <h6 className="fw-bold">Branches</h6>
+                        <p style={{ fontSize: '0.9rem', lineHeight: 1.5}}>
+                            Dubai, Qatar, Singapore, Malaysia, Indonesia, United Kingdom, Ireland, Germany, Switzerland, Portugal, Spain, USA - Miami, Mexico, Canada
+                        </p>
+                    </Col>
+                </Row>
 
-                <Row className="pb-3 text-center">
-                    <small>© 2025 BIBLIA Technologies. All rights reserved</small>
+                {/* Bottom Footer */}
+                <Row className="pt-3" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
+                    <Col md={8} style={{ fontSize: '0.85rem' }}>
+                        2025 BIBLIA BUSINESS SOLUTIONS INDIA PRIVATE LIMITED. All Rights Reserved. Disclaimer | Privacy Policy | T&C
+                    </Col>
+                    <Col md={4} className="text-md-end" style={{ fontSize: '0.85rem' }}>
+                        Stay Connected: <span style={{ marginLeft: '10px' }}>FB | INSTA | TW | YT | LIN</span>
+                    </Col>
                 </Row>
             </Container>
         </footer>

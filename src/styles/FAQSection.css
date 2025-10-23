@@ -1,52 +1,106 @@
 .faq-section {
-    background-color: #3a2e5f;
-    background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
-    min-height: 100vh;
+  background: #3A2E5F;
 }
 
 .faq-section h2 {
-    font-size: 2rem;
-    letter-spacing: 0.5px;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #111;
 }
 
-.faq-section p {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1rem;
-    opacity: 0.9;
+.faq-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-/* Accordion Design */
-.accordion-button {
-    background-color: #4b3b73 !important;
-    color: #fff !important;
-    font-weight: 600;
-    font-size: 1rem;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.faq-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
 }
 
-.accordion-button:hover {
-    background-color: #5a4691 !important;
+.faq-card.active {
+  border-color: #3A2E5F;
+  box-shadow: 0 6px 20px rgba(58, 46, 95, 0.15);
 }
 
-.accordion-button:not(.collapsed) {
-    background-color: #5a4691 !important;
-    color: #fff !important;
-    box-shadow: none;
+.faq-question {
+  font-size: 1.05rem;
+  color: #222;
+  transition: color 0.3s ease;
 }
 
-.accordion-body {
-    background-color: #ffffff;
-    color: #333;
-    border-radius: 0 0 10px 10px;
-    font-size: 0.95rem;
-    padding: 1rem 1.25rem;
+.faq-card.active .faq-question p {
+  color: #3a2e5f;
 }
 
-.accordion-item {
-    border: none !important;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+.faq-icon {
+  font-size: 1.4rem;
+  color: #444;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.faq-card.active .faq-icon {
+  color: #3a2e5f;
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.faq-card.active .faq-answer {
+  max-height: 300px;
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .faq-card {
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+
+/* Testimonial */
+
+.testimonial-section {
+  background-color: #fff;
+  /* background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.05) 0%, transparent 60%); */
+  color: black;
+}
+
+.testimonial-card {
+  background: #3A2E5F !important;
+  color: #fff !important;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 0.9rem;
 }
