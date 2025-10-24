@@ -123,14 +123,15 @@ const ContactUs = () => {
                             <div className="text-light ps-md-4">
                                 <h5 className="fw-bold mb-3">Contact Information</h5>
                                 <p>
-                                    <strong>Address:</strong> 123 Business Street, Chennai, India
+                                    <strong>Address:</strong> Raheja Towers, 177 Anna Salai (Mount Road), Chennai - 600002, Tamil Nadu, India
                                 </p>
                                 <p>
-                                    <strong>Email:</strong> info@yourcompany.com
+                                    <strong>Email:</strong> marketing@bbsindiapvtltd.com
                                 </p>
                                 <p>
-                                    <strong>Phone:</strong> +91 98765 43210
+                                    <strong>Phone:</strong> +91- 80881 62610
                                 </p>
+
 
                                 <div className="mt-4">
                                     <iframe

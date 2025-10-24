@@ -92,3 +92,13 @@
     max-width: 600px;
     margin: 0 auto;
 }
+
+.card-body-custom {
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .card-body-custom {
+    height: 250px;
+  }
+}

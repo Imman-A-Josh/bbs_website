@@ -1,16 +1,32 @@
+import { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 
 const NavBar = () => {
+    const [expanded, setExpanded] = useState(false);
+
+    const handleNavClick = () => {
+        // Collapse only in mobile view
+        if (window.innerWidth < 992) {
+            setExpanded(false);
+        }
+    };
+
     return (
         <>
-            <Navbar expand="lg" bg="white" fixed="top" className="py-3 shadow-sm">
+            <Navbar
+                expand="lg"
+                bg="white"
+                fixed="top"
+                className="py-3 shadow-sm"
+                expanded={expanded}
+            >
                 <Container>
                     <Navbar.Brand
                         href="/"
                         className="d-flex align-items-center fw-bold"
-                        // onClick={handleNavClick}
+                        onClick={handleNavClick}
                     >
                         <img
                             src="https://static.wixstatic.com/media/bff149_feb18a27aacf48f29349c5d21f7f45e6~mv2.png/v1/fill/w_150,h_142,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo-transparent-png.png"
@@ -21,21 +37,31 @@ const NavBar = () => {
                         />
                         <div>
                             <span style={{ color: "#3A2E5F" }}>BIBLIA</span>{" "}
-                            <div style={{ fontSize: "0.8rem", color: "gray", marginTop: "-5px" }}>
+                            <div
+                                style={{
+                                    fontSize: "0.8rem",
+                                    color: "gray",
+                                    marginTop: "-5px",
+                                }}
+                            >
                                 BUSINESS SOLUTIONS
                             </div>
                         </div>
                     </Navbar.Brand>
 
-                    <Navbar.Toggle aria-controls="main-navbar" />
+                    <Navbar.Toggle
+                        aria-controls="main-navbar"
+                        onClick={() => setExpanded(expanded ? false : true)}
+                    />
                     <Navbar.Collapse id="main-navbar">
                         <Nav className="mx-auto d-flex align-items-center text-center gap-4">
                             <Nav.Link
                                 as={NavLink}
                                 to="/"
-                                // onClick={handleNavClick}
+                                onClick={handleNavClick}
                                 className={({ isActive }) =>
-                                    `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"}`
+                                    `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"
+                                    }`
                                 }
                             >
                                 Home
@@ -44,9 +70,10 @@ const NavBar = () => {
                             <Nav.Link
                                 as={NavLink}
                                 to="/about"
-                                // onClick={handleNavClick}
+                                onClick={handleNavClick}
                                 className={({ isActive }) =>
-                                    `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"}`
+                                    `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"
+                                    }`
                                 }
                             >
                                 About
@@ -55,9 +82,10 @@ const NavBar = () => {
                             <Nav.Link
                                 as={NavLink}
                                 to="/products"
-                                // onClick={handleNavClick}
+                                onClick={handleNavClick}
                                 className={({ isActive }) =>
-                                    `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"}`
+                                    `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"
+                                    }`
                                 }
                             >
                                 Products
@@ -66,74 +94,30 @@ const NavBar = () => {
                             <Nav.Link
                                 as={NavLink}
                                 to="/services"
-                                // onClick={handleNavClick}
+                                onClick={handleNavClick}
                                 className={({ isActive }) =>
-                                    `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"}`
+                                    `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"
+                                    }`
                                 }
                             >
                                 Services
                             </Nav.Link>
 
-                             <Nav.Link
+                            <Nav.Link
                                 as={NavLink}
                                 to="/contact"
-                                // onClick={handleNavClick}
+                                onClick={handleNavClick}
                                 className={({ isActive }) =>
-                                    `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"}`
+                                    `fw-semibold nav-link ${isActive ? "text-active" : "text-secondary"
+                                    }`
                                 }
                             >
                                 Contact Us
                             </Nav.Link>
-
                         </Nav>
-                      
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
-            {/* {openMenu === "products" && (
-                <div className="mega-menu shadow-lg border-top">
-                    <Container>
-                        <Row className="py-5">
-                            {[
-                                {
-                                    title: "Petroleum",
-                                    desc: "Sustainable and safe petroleum sourcing and trade solutions.",
-                                    key: "petroleum",
-                                },
-                                {
-                                    title: "Metals & Minerals",
-                                    desc: "Reliable supply of high-quality metals and mineral resources.",
-                                    key: "metals",
-                                },
-                                {
-                                    title: "Agro Products",
-                                    desc: "Premium agricultural exports maintaining global standards.",
-                                    key: "agro",
-                                },
-                                {
-                                    title: "Apparel",
-                                    desc: "Trusted buying office for apparel sourcing and distribution.",
-                                    key: "apparel",
-                                },
-                            ].map((item, index) => (
-                                <Col
-                                    md={3}
-                                    key={index}
-                                    onClick={() => handleProductClick(item.key)}
-                                    className="mega-item text-white"
-                                >
-                                    <div className="mega-card p-3">
-                                        <h6 className="fw-bold mb-2">{item.title}</h6>
-                                        <p className="small mb-0">{item.desc}</p>
-                                    </div>
-                                </Col>
-                            ))}
-                        </Row>
-                    </Container>
-                </div>
-            )} */}
-
         </>
     );
 };

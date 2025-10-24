@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa"
 
 const Footer = () => {
     return (
@@ -20,23 +22,33 @@ const Footer = () => {
                     {/* About Us & Products */}
                     <Col md={3} className="mb-3">
                         <h6 className="fw-bold mb-3">Company</h6>
-                        <ul className="list-unstyled" style={{ fontSize: '0.9rem', paddingLeft: 0 }}>
-                            <li style={{ marginBottom: '6px' }}>About Us</li>
-                            <li style={{ marginBottom: '6px' }}>Services</li>
-                            <li style={{ marginBottom: '6px' }}>Contact Us</li>
+                        <ul className="list-unstyled" style={{ fontSize: "0.9rem", paddingLeft: 0 }}>
+                            <li style={{ marginBottom: "6px" }}>
+                                <Link to="/about" className="text-light text-decoration-none">About Us</Link>
+                            </li>
+                            <li style={{ marginBottom: "6px" }}>
+                                <Link to="/services" className="text-light text-decoration-none">Services</Link>
+                            </li>
+                            <li style={{ marginBottom: "6px" }}>
+                                <Link to="/contact" className="text-light text-decoration-none">Contact Us</Link>
+                            </li>
                         </ul>
-
                     </Col>
+
                     <Col md={3}>
                         <h6 className="fw-bold mb-3">Products</h6>
-                        <ul className="list-unstyled" style={{ fontSize: '0.9rem', paddingLeft: 0 }}>
-                            <li style={{ marginBottom: '6px' }}>Petroleum</li>
-                            <li style={{ marginBottom: '6px' }}>Metal & Mineral</li>
-                            <li style={{ marginBottom: '6px' }}>Agro Product</li>
-                            <li style={{ marginBottom: '6px' }}>Apparel</li>
+                        <ul className="list-unstyled" style={{ fontSize: "0.9rem", paddingLeft: 0 }}>
+                            <li style={{ marginBottom: "6px" }}>
+                                <Link to="/products/petroleum" className="text-light text-decoration-none">Petroleum</Link>
+                            </li>
+                            <li style={{ marginBottom: "6px" }}>
+                                <Link to="/products/metals" className="text-light text-decoration-none">Metal & Mineral</Link>
+                            </li>
+                            <li style={{ marginBottom: "6px" }}>
+                                <Link to="/products/agro" className="text-light text-decoration-none">Agro Product</Link>
+                            </li>
                         </ul>
                     </Col>
-
                     {/* Registered Office */}
                     <Col md={3}>
                         <h6 className="fw-bold">Registered Office</h6>
@@ -52,19 +64,48 @@ const Footer = () => {
                 <Row className="mb-4">
                     <Col md={6}>
                         <h6 className="fw-bold">Branches</h6>
-                        <p style={{ fontSize: '0.9rem', lineHeight: 1.5}}>
+                        <p style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                             Dubai, Qatar, Singapore, Malaysia, Indonesia, United Kingdom, Ireland, Germany, Switzerland, Portugal, Spain, USA - Miami, Mexico, Canada
                         </p>
                     </Col>
                 </Row>
 
                 {/* Bottom Footer */}
-                <Row className="pt-3" style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }}>
-                    <Col md={8} style={{ fontSize: '0.85rem' }}>
-                        2025 BIBLIA BUSINESS SOLUTIONS INDIA PRIVATE LIMITED. All Rights Reserved. Disclaimer | Privacy Policy | T&C
+                <Row className="pt-3" style={{ borderTop: "1px solid rgba(255,255,255,0.3)" }}>
+                    {/* Left side */}
+                    <Col md={8} style={{ fontSize: "0.85rem" }}>
+                        © 2025 <strong>BIBLIA BUSINESS SOLUTIONS INDIA PRIVATE LIMITED</strong>. All Rights Reserved.{" "}
+                        <a href="/" className="text-decoration-none text-light mx-1">
+                            Disclaimer
+                        </a>
+                        |
+                        <a href="/" className="text-decoration-none text-light mx-1">
+                            Privacy Policy
+                        </a>
+                        |
+                        <a href="/" className="text-decoration-none text-light mx-1">
+                            T&amp;C
+                        </a>
                     </Col>
-                    <Col md={4} className="text-md-end" style={{ fontSize: '0.85rem' }}>
-                        Stay Connected: <span style={{ marginLeft: '10px' }}>FB | INSTA | TW | YT | LIN</span>
+
+                    {/* Right side with icons */}
+                    <Col md={4} className="text-md-end mt-3 mt-md-0" style={{ fontSize: "0.85rem" }}>
+                        Stay Connected:
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-light ms-3">
+                            <FaFacebookF />
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-light ms-3">
+                            <FaInstagram />
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-light ms-3">
+                            <FaTwitter />
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-light ms-3">
+                            <FaYoutube />
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-light ms-3">
+                            <FaLinkedinIn />
+                        </a>
                     </Col>
                 </Row>
             </Container>

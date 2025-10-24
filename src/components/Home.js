@@ -29,7 +29,6 @@ import metalImage6 from '../Assets/metal6.avif';
 
 import NickelImage from '../Assets/nickel.jpg';
 
-import HomeBannerImage from '../Assets/newHome.png'
 import HomeBackgroundImage from '../Assets/backgroundHome.jpg'
 
 
@@ -210,20 +209,6 @@ const HeroSection = () => {
                                 </Button>
                             </div>
                         </Col>
-
-                        {/* Right Image (optional) */}
-                        {/* <Col md={6} className="text-center mt-5 mt-md-0">
-                            <img
-                                src={HomeBannerImage}
-                                alt="Contact Illustration"
-                                className="img-fluid"
-                                style={{
-                                    maxHeight: "400px",
-                                    width: "100%",
-                                    objectFit: "contain",
-                                }}
-                            />
-                        </Col> */}
                     </Row>
                 </Container>
             </section>
@@ -235,7 +220,7 @@ const HeroSection = () => {
                         <Col md={2}>
                             <FaMedal size={40} className="mb-3 text-warning" />
                             <h2 className="fw-bold mb-0">
-                                <CountUp end={20} duration={3} />+
+                                <CountUp end={10} duration={3} />+
                             </h2>
                             <p className="small text-light mt-2">Years of Experience</p>
                         </Col>
