@@ -50,9 +50,8 @@ const About = () => {
                             <div className="about-text pe-md-4">
                                 <p className="text-muted mb-4" style={{ textAlign: "justify" }}>
                                     <b>
-                                        <span
-                                            className="text-primary"
-                                            style={{ fontSize: "20px", letterSpacing: "0.5px" }}
+                                        <span 
+                                            style={{ fontSize: "22px",color:"#31294E" }}
                                         >
                                             BIBLIA BUSINESS SOLUTIONS (INDIA) PRIVATE LIMITED
                                         </span>
