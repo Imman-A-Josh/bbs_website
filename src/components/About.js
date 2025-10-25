@@ -5,6 +5,7 @@ import ScrollToTopButton from "../components/ScrollToTopButton";
 import "../styles/About.css";
 import { FaSmile, FaStar, FaGlobe, FaBolt } from "react-icons/fa";
 import BannerImage from '../Assets/mainAbout.jpeg'
+import RahejaImage from '../Assets/RahejaNew.jpg'
 
 const features = [
     { icon: <FaSmile />, title: "Client Satisfaction" },
@@ -40,7 +41,7 @@ const About = () => {
                     <Row className="align-items-center g-4 mt-4">
                         <Col md={6}>
                             <img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQre8fdTAT0Yj46wNGdAqRz4epiDfeHQbQCdw&s"
+                                src={RahejaImage}
                                 alt="about"
                                 className="img-fluid cover" style={{ maxHeight: "400px", width: "100%", objectFit: "contain" }}
                             />

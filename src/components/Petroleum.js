@@ -1,10 +1,13 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import pertroliumImage from '../Assets/petrolium.jpg';
-import pet1 from '../Assets/p1.avif';
-import pet2 from '../Assets/p2.avif';
-import pet3 from '../Assets/p3.jpg';
-import pet4 from '../Assets/p4.jpg';
+import pertroliumImage from '../Assets/Petrol/petrol.png';
+
+import ScrollToTopButton from "../components/ScrollToTopButton";
+
+import pet1 from '../Assets/Petrol/crude_oil.png';
+import pet2 from '../Assets/Petrol/diesel.png';
+import pet3 from '../Assets/Petrol/jetfuel.jpg';
+import pet4 from '../Assets/Petrol/BITUMEN.jpg';
 
 const Petroleum = () => {
 
@@ -66,38 +69,43 @@ const Petroleum = () => {
     ];
 
     return (
-        <section id="petroleum" className="py-5 mt-4" style={{ backgroundColor: "#f5f7fa" }}>
-            <Container>
-                {products.map(({ id, title, description, image, imgLeft }, index) => (
-                    <Row
-                        key={id}
-                        className={`align-items-center my-5 py-4 shadow-sm rounded-4 bg-white`}
-                        style={{ flexDirection: imgLeft ? "row-reverse" : "row" }}
-                    >
-                        <Col md={6} className="p-4">
-                            <h2 className="fw-bold mb-4" style={{ color: "#3A2E5F" }}>
-                                {title}
-                            </h2>
-                            <div style={{ fontSize: "1rem", lineHeight: "1.6", color: "#555" }}>
-                                {description.map((text, i) => (
-                                    <p key={i} className="mb-3">
-                                        {text}
-                                    </p>
-                                ))}
-                            </div>
-                        </Col>
-                        <Col md={6}>
-                            <img
-                                src={image}
-                                alt={title}
-                                className="w-100 rounded-end"
-                                style={{ objectFit: "cover", maxHeight: "350px", borderRadius: imgLeft ? "25px 0 0 25px" : "0 25px 25px 0" }}
-                            />
-                        </Col>
-                    </Row>
-                ))}
-            </Container>
-        </section>
+        <>
+            <section id="petroleum" className="py-5 mt-4" style={{ backgroundColor: "#f5f7fa" }}>
+                <Container>
+                    {products.map(({ id, title, description, image, imgLeft }, index) => (
+                        <Row
+                            key={id}
+                            className={`align-items-center my-5 py-4 shadow-sm rounded-4 bg-white`}
+                            style={{ flexDirection: imgLeft ? "row-reverse" : "row" }}
+                        >
+                            <Col md={6} className="p-4">
+                                <h2 className="fw-bold mb-4" style={{ color: "#3A2E5F" }}>
+                                    {title}
+                                </h2>
+                                <div style={{ fontSize: "1rem", lineHeight: "1.6", color: "#555" }}>
+                                    {description.map((text, i) => (
+                                        <p key={i} className="mb-3">
+                                            {text}
+                                        </p>
+                                    ))}
+                                </div>
+                            </Col>
+                            <Col md={6}>
+                                <img
+                                    src={image}
+                                    alt={title}
+                                    className="w-100 rounded-end"
+                                    style={{ objectFit: "cover", maxHeight: "350px", borderRadius: imgLeft ? "25px 0 0 25px" : "0 25px 25px 0" }}
+                                />
+                            </Col>
+                        </Row>
+                    ))}
+                </Container>
+            </section>
+
+            <ScrollToTopButton />
+
+        </>
     );
 };
 

@@ -1,16 +1,16 @@
 import React from 'react';
 import { Container, Row, Card, Col } from 'react-bootstrap';
+import ScrollToTopButton from "../components/ScrollToTopButton";
 import metalImage2 from '../Assets/metal2.avif';
 // import metalImage3 from '../Assets/metal3.jpg';
 import metalImage4 from '../Assets/metal4.jpg';
 import metalImage5 from '../Assets/metal5.avif';
 import metalImage6 from '../Assets/metal6.avif';
 import metalImage7 from '../Assets/metal7.jpg';
-
 import NickelImage from '../Assets/nickel.jpg';
 
 
-import metalImage1 from '../Assets/metal1.avif';
+import metalImage1 from '../Assets/Metals/metalHome.jpg';
 
 const metals = () => {
 
@@ -56,7 +56,7 @@ const metals = () => {
 
     return (
 
-        <section id='metals' className="py-4">
+        <section id='metals' className="py-5">
 
             <section className="about-banner-section">
                 <div className="image-container position-relative text-center">
@@ -100,6 +100,9 @@ const metals = () => {
 
 
             </Container>
+
+
+            <ScrollToTopButton />
 
         </section >
     )

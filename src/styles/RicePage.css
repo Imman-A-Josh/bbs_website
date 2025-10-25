@@ -1,0 +1,89 @@
+.text-purple {
+  color: #5b2e91;
+}
+
+.underline {
+  width: 60px;
+  height: 3px;
+  background-color: #5b2e91;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* Hero Banner */
+.rice-hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rice-hero .btn {
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+/* Rice Item Alternating Rows */
+.rice-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* CTA Section */
+.rice-cta {
+  background: linear-gradient(135deg, #5b2e91, #7e3dba);
+}
+
+/* Packaging Table */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+.specification-section {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+.specification-section h6 {
+  color: #3A2E5F;
+  /* your purple color */
+  margin-top: 1rem;
+}
+
+.specification-section ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.specification-section ul li {
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+.specification-section p {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.sugar-item .carousel-wrapper {
+  width: 100%;
+  height: 350px;
+  /* fixed height, adjust as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+.sugar-item .carousel-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ensures image fills area and is cropped if needed */
+  transition: transform 0.5s ease;
+}

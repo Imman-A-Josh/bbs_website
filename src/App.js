@@ -14,6 +14,11 @@ import ScrollToTop from "./components/ScrollToTop";
 import Petroleum from "./components/Petroleum";
 import Services from "./components/Services";
 import Products from "./Pages/products";
+import Rices from "./Pages/Rices";
+import WheatPage from "./Pages/Wheat";
+import SugarPage from "./Pages/Sugar";
+import MaizePage from "./Pages/Maize";
+import SoyaBeanPage from "./Pages/Soya";
 
 function App() {
   return (
@@ -29,8 +34,12 @@ function App() {
         <Route path="/products/petroleum" element={<Petroleum />} />
         <Route path="/services" element={<Services />} />
         <Route path="/products" element={<Products />} />
-        {/* <Route path="/vision" element={<About />} />
-        <Route path="/house" element={<Homefront />} /> */}
+        <Route path="/products/agro/rice" element={<Rices />} />
+        <Route path="/products/agro/wheat" element={<WheatPage />} />
+        <Route path="/products/agro/sugar" element={<SugarPage />} />
+        <Route path="/products/agro/maize" element={<MaizePage />} />
+        <Route path="/products/agro/soya-bean" element={<SoyaBeanPage />} />
+
       </Routes>
       <Footer />
     </Router>

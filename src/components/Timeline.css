@@ -102,3 +102,18 @@
     height: 250px;
   }
 }
+
+.card-body-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* keeps content spaced well */
+  height: 100%; /* makes the card body fill vertical space */
+}
+
+.card-body-custom a {
+  align-self: flex-start; /* keeps the link aligned left */
+  margin-top: auto; /* pushes it down with space */
+  font-weight: bold;
+  color: red;
+  text-decoration: underline;
+}

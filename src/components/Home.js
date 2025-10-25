@@ -8,24 +8,24 @@ import { useNavigate } from "react-router-dom";
 
 import ScrollToTopButton from "../components/ScrollToTopButton";
 
-import pet1 from '../Assets/p1.avif';
-import pet2 from '../Assets/p2.avif';
-import pet3 from '../Assets/p3.jpg';
-import pet4 from '../Assets/p4.jpg';
-import petrolium from '../Assets/petrolium.jpg';
-
-import agroImage1 from '../Assets/agroMain.avif';
-import sugarImage from '../Assets/sugar.jpg';
-import riceImage from '../Assets/rice.avif';
-import wheatImage from '../Assets/wheat.avif';
-import maizeImage from '../Assets/maize.avif';
-import soyaImage from '../Assets/soya.jpg';
+import agroImage1 from '../Assets/Agro/Agroall.jpg';
+import sugarImage from '../Assets/Agro/Sugar.jpg';
+import riceImage from '../Assets/Agro/Rice.jpg';
+import wheatImage from '../Assets/Agro/Wheat.jpg';
+import maizeImage from '../Assets/Agro/Corn.jpg';
+import soyaImage from '../Assets/Agro/Soya.jpg';
 
 import metalImage1 from '../Assets/metal1.avif';
 import metalImage2 from '../Assets/metal2.avif';
 import metalImage4 from '../Assets/metal4.jpg';
 import metalImage5 from '../Assets/metal5.avif';
 import metalImage6 from '../Assets/metal6.avif';
+
+import petrolium from '../Assets/Petrol/petrol.png';
+import pet1 from '../Assets/Petrol/crude_oil.png';
+import pet2 from '../Assets/Petrol/diesel.png';
+import pet3 from '../Assets/Petrol/jetfuel.jpg';
+import pet4 from '../Assets/Petrol/BITUMEN.jpg';
 
 import NickelImage from '../Assets/nickel.jpg';
 

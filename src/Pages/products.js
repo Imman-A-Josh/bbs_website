@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; // if using react-router
-
-import petroleumImage from '../Assets/p1.avif';
-import metalImage from '../Assets/metal1.avif';
-import agroImage from '../Assets/agroMain.avif';
-
+import ScrollToTopButton from "../components/ScrollToTopButton";
+import agroImage from '../Assets/Agro/Agroall.jpg';
 import productImage from '../Assets/products.png';
+
+import petroleumImage from '../Assets/Petrol/petrol.png';
+import metalImage from '../Assets/Metals/proMetalHeading.jpg';
 
 const Products = () => {
 
@@ -89,6 +89,9 @@ const Products = () => {
                     </Row>
                 </Container>
             </section>
+
+            <ScrollToTopButton />
+
         </>
     );
 };
