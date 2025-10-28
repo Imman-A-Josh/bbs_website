@@ -4,7 +4,7 @@ import "./Timeline.css";
 
 import ScrollToTopButton from "../components/ScrollToTopButton";
 
-import agroImage1 from '../Assets/agroMain.avif';
+import agroImage1 from '../Assets/Agro/AgroHome.jpg';
 import sugarImage from '../Assets/Agro/Sugar.jpg';
 import riceImage from '../Assets/Agro/Rice.jpg';
 import wheatImage from '../Assets/Agro/Wheat.jpg';

@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; // if using react-router
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import agroImage from '../Assets/Agro/Agroall.jpg';
-import productImage from '../Assets/products.png';
+import productImage from '../Assets/ProductHome.jpg';
 
 import petroleumImage from '../Assets/Petrol/petrol.png';
 import metalImage from '../Assets/Metals/proMetalHeading.jpg';

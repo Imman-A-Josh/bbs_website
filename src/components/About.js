@@ -56,7 +56,7 @@ const About = () => {
                                             BIBLIA BUSINESS SOLUTIONS (INDIA) PRIVATE LIMITED
                                         </span>
                                     </b>{" "}
-                                    is a renowned company specializing in international trade and export
+                                    is a renowned company specializing in international trade Import and export
                                     expertise. Our core business areas include{" "}
                                     <b>
                                         petroleum, minerals, food products (such as rice, maize, sugar,

@@ -15,7 +15,7 @@ import wheatImage from '../Assets/Agro/Wheat.jpg';
 import maizeImage from '../Assets/Agro/Corn.jpg';
 import soyaImage from '../Assets/Agro/Soya.jpg';
 
-import metalImage1 from '../Assets/metal1.avif';
+import metalImage1 from '../Assets/Metals/proMetalHeading.jpg';
 import metalImage2 from '../Assets/metal2.avif';
 import metalImage4 from '../Assets/metal4.jpg';
 import metalImage5 from '../Assets/metal5.avif';
@@ -282,7 +282,7 @@ const HeroSection = () => {
                                 style={{ width: "60px", height: "3px", background: "#3A2E5F" }}
                             ></div>
                             <p className="text-muted">
-                                <b>BIBLIA BUSINESS SOLUTIONS (INDIA) PRIVATE LIMITED <br />(BBS INDIA PVT LTD)</b> is a renowned company specializing in international trade and export expertise. Our core business areas include <b> petroleum, minerals, food products (such as rice, maize, sugar, wheat, and soybean), apparel, and coal </b>.
+                                <b>BIBLIA BUSINESS SOLUTIONS (INDIA) PRIVATE LIMITED <br />(BBS INDIA PVT LTD)</b> is a renowned company specializing in international trade Import and Export expertise. Our core business areas include <b> petroleum, minerals, food products (such as rice, maize, sugar, wheat, and soybean), apparel, and coal </b>.
                             </p>
                             <Button
                                 variant="primary"
